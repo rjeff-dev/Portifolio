@@ -16,6 +16,7 @@ import {
   TituloSecao
 } from './styles'
 
+// Cada bloco abaixo estiliza só o que é específico desta página; o que se repete fica em /styles.
 const SobreMim = styled(Secao)`
   p {
     color: var(--texto-suave);
@@ -52,6 +53,7 @@ const Rodape = styled.footer`
   padding: 50px 0 60px;
   text-align: center;
   color: var(--texto-suave);
+  /* Seletor de componente: altera o Botoes apenas dentro do rodapé */
 
   ${Botoes} {
     justify-content: center;
@@ -68,8 +70,13 @@ const Rodape = styled.footer`
   }
 `
 
+/**
+ * Composição da página: apenas organiza as seções na ordem em que aparecem.
+ * A lógica e o estilo de cada parte ficam nos próprios componentes.
+ */
 const App = () => (
   <>
+    {/* Aplica o estilo global (cores, fontes, reset) uma única vez */}
     <EstiloGlobal />
     <Container>
       <Navegacao>
@@ -98,7 +105,9 @@ const App = () => (
 
       <Secao id="projetos">
         <TituloSecao>Projetos</TituloSecao>
+        {/* 2 colunas no desktop porque são 2 projetos; no celular vira 1 coluna */}
         <Grade $colunasTablet={2} $colunasDesktop={2}>
+          {/* key estável (título) em vez do índice: o React identifica corretamente cada item */}
           {projetos.map((projeto) => (
             <CartaoProjeto key={projeto.titulo} {...projeto} />
           ))}

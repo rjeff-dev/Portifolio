@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components'
 
+// Pontos de quebra da responsividade (mobile-first): celular < 768px < tablet < 1100px < desktop.
 export const breakpoints = {
   tablet: '768px',
   desktop: '1100px'
@@ -7,6 +8,7 @@ export const breakpoints = {
 
 // Paleta neon (ciano e roxo), inspirada no site da Nerull Void Galaxy
 export const EstiloGlobal = createGlobalStyle`
+  /* Tema escuro (padrão). Todas as cores vêm de variáveis CSS: trocar de tema é só trocar os valores, sem reescrever componentes. */
   :root {
     --fundo: #07070f;
     --superficie: #0f1020;
@@ -14,6 +16,7 @@ export const EstiloGlobal = createGlobalStyle`
     --texto-suave: #9aa6c4;
     --ciano: #00e5ff;
     --roxo: #b026ff;
+    /* Cores em RGB puro: permitem brilhos com transparência, ex.: rgba(var(--ciano-rgb), 0.4) */
     --ciano-rgb: 0, 229, 255;
     --roxo-rgb: 176, 38, 255;
     --destaque: var(--ciano);
@@ -24,6 +27,7 @@ export const EstiloGlobal = createGlobalStyle`
     --gradiente: linear-gradient(135deg, var(--ciano), var(--roxo));
     color-scheme: dark;
     box-sizing: border-box;
+    /* Respeita as áreas seguras de celulares (notch e barra do sistema), junto com viewport-fit=cover */
     padding-top: env(safe-area-inset-top, 0px);
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
@@ -83,6 +87,7 @@ export const EstiloGlobal = createGlobalStyle`
   }
 `
 
+// Centraliza o conteúdo e limita a largura; o espaçamento lateral aumenta em telas maiores.
 export const Container = styled.div`
   width: 100%;
   max-width: 1080px;
@@ -94,6 +99,7 @@ export const Container = styled.div`
   }
 `
 
+// Menu: centralizado no celular e alinhado à direita a partir do tablet.
 export const Navegacao = styled.nav`
   display: flex;
   flex-wrap: wrap;
@@ -108,6 +114,7 @@ export const Navegacao = styled.nav`
     color: var(--texto-suave);
     text-decoration: none;
     padding: 2px 0;
+    /* Sublinhado animado: cresce da esquerda via transform, que é leve para o navegador animar */
 
     &::after {
       content: '';
@@ -177,6 +184,7 @@ export const Grade = styled.div<GradeProps>`
   }
 `
 
+// Base de todos os cards. O hover sobe o card com brilho roxo para indicar interatividade.
 export const Cartao = styled.article`
   background: var(--superficie);
   border: 1px solid var(--borda);
@@ -215,6 +223,7 @@ export const ListaChips = styled.div`
   gap: 8px;
 `
 
+// Etiqueta de tecnologia (React, TypeScript...).
 export const Chip = styled.span`
   font-size: 0.8rem;
   padding: 3px 10px;
@@ -240,11 +249,13 @@ export const Botoes = styled.div`
   gap: 12px;
 `
 
+// Botão/link com dois visuais: "principal" (degradê) e secundário (contorno), escolhidos por prop.
 type BotaoProps = { $principal?: boolean }
 
 export const Botao = styled.a<BotaoProps>`
   flex: 1 1 140px;
   text-align: center;
+  /* Quebra textos longos (como o e-mail) para não estourar a tela no celular */
   overflow-wrap: anywhere;
   padding: 11px 20px;
   border-radius: 10px;

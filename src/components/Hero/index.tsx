@@ -3,6 +3,7 @@ import { contatos } from '../../dados'
 import { Botao, Botoes } from '../../styles'
 import { Apresentacao, Cabecalho, Etiqueta, Foto } from './styles'
 
+// Apresentação principal: diz quem sou, o que busco e leva aos projetos e redes.
 const Hero = () => (
   <Cabecalho>
     <Apresentacao>
@@ -26,6 +27,7 @@ const Hero = () => (
         </Botao>
       </Botoes>
     </Apresentacao>
+    {/* width/height reservam o espaço da imagem e evitam "pulos" no layout; alt é para acessibilidade */}
     <Foto src={foto} alt="Foto de Roberto Jefferson" width={220} height={220} />
   </Cabecalho>
 )

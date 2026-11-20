@@ -21,6 +21,7 @@ export const Links = styled.div`
 
 type LinkProps = { $principal?: boolean }
 
+// Prop com "$" é transitória no styled-components: serve só para o estilo e não vai para o HTML.
 export const LinkProjeto = styled.a<LinkProps>`
   flex: 1 1 0;
   text-align: center;

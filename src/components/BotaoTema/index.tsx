@@ -1,6 +1,7 @@
 import { useTema } from '../../hooks/useTema'
 import { BotaoAlternar } from './styles'
 
+// Ícones em SVG inline: não exigem biblioteca nem requisição extra, e herdam a cor do botão.
 const IconeSol = () => (
   <svg
     viewBox="0 0 24 24"
@@ -30,6 +31,11 @@ const IconeLua = () => (
   </svg>
 )
 
+/**
+ * Botão que alterna entre tema claro e escuro.
+ * Acessibilidade: o aria-label descreve a AÇÃO ("Ativar tema claro") e não o estado,
+ * os SVGs decorativos têm aria-hidden e o botão usa type="button".
+ */
 const BotaoTema = () => {
   const { tema, alternarTema } = useTema()
   const temaEscuro = tema === 'escuro'

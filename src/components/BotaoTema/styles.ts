@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 
+// Animação de giro: os ícones trocam ao alternar o tema e o novo "entra" rodando.
 const girar = keyframes`
   from {
     transform: rotate(-90deg) scale(0.6);
@@ -33,6 +34,7 @@ export const BotaoAlternar = styled.button`
     border-color: var(--ciano);
     box-shadow: var(--brilho-ciano);
   }
+  /* Foco visível só na navegação por teclado (Tab): acessibilidade sem poluir o clique do mouse */
 
   &:focus-visible {
     outline: 2px solid var(--roxo);

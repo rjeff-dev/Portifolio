@@ -1,21 +1,31 @@
+/**
+ * Fonte única de conteúdo do portfólio.
+ * Separar dados de interface permite adicionar um projeto ou habilidade
+ * editando só este arquivo, sem mexer em nenhum componente.
+ */
+
+// Descreve um projeto exibido nos cards. O TypeScript garante que nenhum campo obrigatório falte.
 export type Projeto = {
   titulo: string
   descricao: string
   tecnologias: string[]
   repositorio: string
-  online?: string // coloque aqui o link do deploy quando tiver
+  // Opcional: nem todo projeto tem deploy. O botão "Site" só aparece se este campo existir.
+  online?: string
 }
 
 export type GrupoHabilidades = { titulo: string; itens: string[] }
 
 export type ItemFormacao = { titulo: string; detalhe: string }
 
+// Links de contato centralizados: reaproveitados no topo (Hero) e no rodapé.
 export const contatos = {
   github: 'https://github.com/rjeff-dev',
   linkedin: 'https://www.linkedin.com/in/robjeffersondev/',
   email: 'rob.jefferson.n@gmail.com'
 }
 
+// A ordem do array é a ordem dos cards na tela.
 export const projetos: Projeto[] = [
   {
     titulo: '🍔 eFood',

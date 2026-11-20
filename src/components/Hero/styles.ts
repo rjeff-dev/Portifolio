@@ -2,9 +2,12 @@ import styled from 'styled-components'
 import { breakpoints, Botoes } from '../../styles'
 
 // Mobile: foto em cima, texto centralizado | Desktop: texto à esquerda, foto à direita
+// Abordagem mobile-first: os estilos base valem para o celular e as media queries
+// (min-width) acrescentam regras para tablet e desktop.
 export const Cabecalho = styled.header`
   padding: 24px 0 32px;
   display: flex;
+  /* No celular a foto aparece em cima, mas no HTML o texto vem primeiro (melhor para SEO e leitores de tela) */
   flex-direction: column-reverse;
   align-items: center;
   gap: 28px;
@@ -27,6 +30,7 @@ export const Apresentacao = styled.div`
     margin: 18px 0 14px;
 
     span {
+      /* Texto com degradê: o fundo é recortado no formato das letras */
       background: var(--gradiente);
       -webkit-background-clip: text;
       background-clip: text;
@@ -68,6 +72,7 @@ export const Etiqueta = styled.span`
   background: var(--superficie);
 `
 
+// A foto cresce a cada breakpoint (160px, 200px e 250px).
 export const Foto = styled.img`
   flex: 0 0 auto;
   width: 160px;
