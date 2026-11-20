@@ -14,9 +14,7 @@ export const useTema = () => {
 
   useEffect(() => {
     document.documentElement.dataset.tema = tema
-    document
-      .querySelector('meta[name="theme-color"]')
-      ?.setAttribute('content', COR_BARRA[tema])
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', COR_BARRA[tema])
   }, [tema])
 
   const alternarTema = useCallback(() => {

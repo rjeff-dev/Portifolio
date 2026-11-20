@@ -38,10 +38,26 @@ export const projetos: Projeto[] = [
 export const habilidades: GrupoHabilidades[] = [
   {
     titulo: 'Front-end',
-    itens: ['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'React', 'SASS', 'Bootstrap', 'Styled-components', 'Vite']
+    itens: [
+      'HTML5',
+      'CSS3',
+      'JavaScript',
+      'TypeScript',
+      'React',
+      'SASS',
+      'Bootstrap',
+      'Styled-components',
+      'Vite'
+    ]
   },
-  { titulo: 'Estado e APIs', itens: ['Redux Toolkit', 'RTK Query', 'REST APIs', 'JSON Server'] },
-  { titulo: 'Ferramentas', itens: ['Git', 'GitHub', 'VS Code', 'npm', 'ESLint', 'Prettier'] },
+  {
+    titulo: 'Estado e APIs',
+    itens: ['Redux Toolkit', 'RTK Query', 'REST APIs', 'JSON Server']
+  },
+  {
+    titulo: 'Ferramentas',
+    itens: ['Git', 'GitHub', 'VS Code', 'npm', 'ESLint', 'Prettier']
+  },
   { titulo: 'Outros', itens: ['Node.js', 'Cypress', 'SQL', 'MySQL'] }
 ]
 
@@ -50,7 +66,10 @@ export const formacao: ItemFormacao[] = [
     titulo: 'Análise e Desenvolvimento de Sistemas',
     detalhe: 'UNIFOR · cursando · conclusão em 12/2027'
   },
-  { titulo: 'Gestão de Recursos Humanos', detalhe: 'Estácio · concluído em 08/2023' },
+  {
+    titulo: 'Gestão de Recursos Humanos',
+    detalhe: 'Estácio · concluído em 08/2023'
+  },
   {
     titulo: 'Imersões e cursos',
     detalhe: 'Alura (Front-End, IA, Dados com Python) · EBAC (Full Stack Python, IA, Portfólio)'

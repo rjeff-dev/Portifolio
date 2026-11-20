@@ -6,20 +6,28 @@
     <meta name="theme-color" content="#07070f" />
     <script>
       // Aplica o tema salvo (ou o do sistema) antes de carregar a página, evitando "piscar"
-      (function () {
+      ;(function () {
         try {
-          var salvo = localStorage.getItem('tema');
-          var claro = salvo ? salvo === 'claro' : window.matchMedia('(prefers-color-scheme: light)').matches;
-          document.documentElement.dataset.tema = claro ? 'claro' : 'escuro';
+          var salvo = localStorage.getItem('tema')
+          var claro = salvo
+            ? salvo === 'claro'
+            : window.matchMedia('(prefers-color-scheme: light)').matches
+          document.documentElement.dataset.tema = claro ? 'claro' : 'escuro'
         } catch (e) {
-          document.documentElement.dataset.tema = 'escuro';
+          document.documentElement.dataset.tema = 'escuro'
         }
-      })();
+      })()
     </script>
     <title>Roberto Jefferson | Desenvolvedor Front-end</title>
-    <meta name="description" content="Portfólio de Roberto Jefferson, desenvolvedor front-end em formação com React e TypeScript." />
+    <meta
+      name="description"
+      content="Portfólio de Roberto Jefferson, desenvolvedor front-end em formação com React e TypeScript."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="root"></div>

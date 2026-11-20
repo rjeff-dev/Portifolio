@@ -85,14 +85,14 @@ const App = () => (
       <SobreMim id="sobre">
         <TituloSecao>Sobre mim</TituloSecao>
         <p>
-          Sou estudante de Análise e Desenvolvimento de Sistemas na UNIFOR (conclusão em 12/2027)
-          e formado em Gestão de Recursos Humanos. Minha transição para a tecnologia é movida por
+          Sou estudante de Análise e Desenvolvimento de Sistemas na UNIFOR (conclusão em 12/2027) e
+          formado em Gestão de Recursos Humanos. Minha transição para a tecnologia é movida por
           prática: estudo todos os dias, faço imersões e cursos e coloco tudo em projetos.
         </p>
         <p>
-          Minha experiência com atendimento, vendas e negociação me deu comunicação, organização
-          e responsabilidade, qualidades que levo para o trabalho em equipe e para entender o que
-          o usuário realmente precisa.
+          Minha experiência com atendimento, vendas e negociação me deu comunicação, organização e
+          responsabilidade, qualidades que levo para o trabalho em equipe e para entender o que o
+          usuário realmente precisa.
         </p>
       </SobreMim>
 

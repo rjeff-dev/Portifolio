@@ -11,8 +11,8 @@ const Hero = () => (
         Olá, eu sou o <span>Roberto Jefferson</span>
       </h1>
       <p>
-        Desenvolvedor Front-end em formação. Construo interfaces em React e TypeScript,
-        responsivas, organizadas e pensadas para quem usa.
+        Desenvolvedor Front-end em formação. Construo interfaces em React e TypeScript, responsivas,
+        organizadas e pensadas para quem usa.
       </p>
       <Botoes>
         <Botao $principal href="#projetos">

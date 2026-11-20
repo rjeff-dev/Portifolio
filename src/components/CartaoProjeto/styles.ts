@@ -32,7 +32,10 @@ export const LinkProjeto = styled.a<LinkProps>`
   border: 1px solid ${({ $principal }) => ($principal ? 'transparent' : 'var(--borda)')};
   background: ${({ $principal }) => ($principal ? 'var(--gradiente)' : 'transparent')};
   color: ${({ $principal }) => ($principal ? 'var(--texto-destaque)' : 'var(--texto)')};
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease,
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
     color 0.25s ease;
 
   &:hover {

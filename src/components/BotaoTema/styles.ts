@@ -23,7 +23,10 @@ export const BotaoAlternar = styled.button`
   background: var(--superficie);
   color: var(--ciano);
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 
   &:hover {
     transform: translateY(-2px);

@@ -182,7 +182,10 @@ export const Cartao = styled.article`
   border: 1px solid var(--borda);
   border-radius: 14px;
   padding: 20px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 
   &:hover {
     border-color: var(--roxo);
@@ -219,7 +222,10 @@ export const Chip = styled.span`
   background: rgba(var(--ciano-rgb), 0.06);
   border: 1px solid rgba(var(--ciano-rgb), 0.25);
   color: var(--texto-suave);
-  transition: color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 
   &:hover {
     color: var(--ciano);
@@ -247,8 +253,12 @@ export const Botao = styled.a<BotaoProps>`
   border: 1px solid ${({ $principal }) => ($principal ? 'transparent' : 'var(--borda)')};
   color: ${({ $principal }) => ($principal ? 'var(--texto-destaque)' : 'var(--texto)')};
   background: ${({ $principal }) => ($principal ? 'var(--gradiente)' : 'var(--superficie)')};
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease,
-    color 0.25s ease, text-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    text-shadow 0.25s ease;
 
   &:hover {
     transform: translateY(-2px);

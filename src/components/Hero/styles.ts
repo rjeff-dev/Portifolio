@@ -75,12 +75,20 @@ export const Foto = styled.img`
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--fundo);
-  box-shadow: 0 0 0 3px var(--ciano), 0 0 28px rgba(var(--ciano-rgb), 0.4), 0 0 46px rgba(var(--roxo-rgb), 0.35);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow:
+    0 0 0 3px var(--ciano),
+    0 0 28px rgba(var(--ciano-rgb), 0.4),
+    0 0 46px rgba(var(--roxo-rgb), 0.35);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 
   &:hover {
     transform: scale(1.03);
-    box-shadow: 0 0 0 3px var(--roxo), 0 0 34px rgba(var(--roxo-rgb), 0.55), 0 0 50px rgba(var(--ciano-rgb), 0.35);
+    box-shadow:
+      0 0 0 3px var(--roxo),
+      0 0 34px rgba(var(--roxo-rgb), 0.55),
+      0 0 50px rgba(var(--ciano-rgb), 0.35);
   }
 
   @media (min-width: ${breakpoints.tablet}) {
