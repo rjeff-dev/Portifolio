@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import BotaoTema from './components/BotaoTema'
 import CartaoProjeto from './components/CartaoProjeto'
 import Habilidades from './components/Habilidades'
 import Hero from './components/Hero'
@@ -76,6 +77,7 @@ const App = () => (
         <a href="#projetos">Projetos</a>
         <a href="#habilidades">Skills</a>
         <a href="#contato">Contato</a>
+        <BotaoTema />
       </Navegacao>
 
       <Hero />

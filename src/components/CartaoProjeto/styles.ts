@@ -41,7 +41,7 @@ export const LinkProjeto = styled.a<LinkProps>`
     color: ${({ $principal }) => ($principal ? 'var(--texto-destaque)' : 'var(--ciano)')};
     box-shadow: ${({ $principal }) =>
       $principal
-        ? '0 0 18px rgba(0, 229, 255, 0.55), 0 0 24px rgba(176, 38, 255, 0.4)'
+        ? '0 0 18px rgba(var(--ciano-rgb), 0.55), 0 0 24px rgba(var(--roxo-rgb), 0.4)'
         : 'var(--brilho-ciano)'};
   }
 `

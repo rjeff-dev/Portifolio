@@ -4,6 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#07070f" />
+    <script>
+      // Aplica o tema salvo (ou o do sistema) antes de carregar a página, evitando "piscar"
+      (function () {
+        try {
+          var salvo = localStorage.getItem('tema');
+          var claro = salvo ? salvo === 'claro' : window.matchMedia('(prefers-color-scheme: light)').matches;
+          document.documentElement.dataset.tema = claro ? 'claro' : 'escuro';
+        } catch (e) {
+          document.documentElement.dataset.tema = 'escuro';
+        }
+      })();
+    </script>
     <title>Roberto Jefferson | Desenvolvedor Front-end</title>
     <meta name="description" content="Portfólio de Roberto Jefferson, desenvolvedor front-end em formação com React e TypeScript." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />

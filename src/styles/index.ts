@@ -14,16 +14,33 @@ export const EstiloGlobal = createGlobalStyle`
     --texto-suave: #9aa6c4;
     --ciano: #00e5ff;
     --roxo: #b026ff;
+    --ciano-rgb: 0, 229, 255;
+    --roxo-rgb: 176, 38, 255;
     --destaque: var(--ciano);
     --texto-destaque: #07070f;
     --borda: #26284d;
-    --brilho-ciano: 0 0 18px rgba(0, 229, 255, 0.45);
-    --brilho-roxo: 0 0 18px rgba(176, 38, 255, 0.5);
+    --brilho-ciano: 0 0 18px rgba(var(--ciano-rgb), 0.45);
+    --brilho-roxo: 0 0 18px rgba(var(--roxo-rgb), 0.5);
     --gradiente: linear-gradient(135deg, var(--ciano), var(--roxo));
     color-scheme: dark;
     box-sizing: border-box;
     padding-top: env(safe-area-inset-top, 0px);
     padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  /* Tema claro: ativado pelo botão de sol/lua (atributo data-tema no <html>) */
+  :root[data-tema='claro'] {
+    --fundo: #f5f7fc;
+    --superficie: #ffffff;
+    --texto: #12142a;
+    --texto-suave: #4d5573;
+    --ciano: #0e7490;
+    --roxo: #9333ea;
+    --ciano-rgb: 14, 116, 144;
+    --roxo-rgb: 147, 51, 234;
+    --texto-destaque: #ffffff;
+    --borda: #dde1f0;
+    color-scheme: light;
   }
 
   * {
@@ -43,9 +60,10 @@ export const EstiloGlobal = createGlobalStyle`
     overflow-x: hidden;
     background-color: var(--fundo);
     background-image:
-      radial-gradient(ellipse 60% 40% at 0% 0%, rgba(176, 38, 255, 0.18), transparent 70%),
-      radial-gradient(ellipse 50% 40% at 100% 20%, rgba(0, 229, 255, 0.12), transparent 70%);
+      radial-gradient(ellipse 60% 40% at 0% 0%, rgba(var(--roxo-rgb), 0.18), transparent 70%),
+      radial-gradient(ellipse 50% 40% at 100% 20%, rgba(var(--ciano-rgb), 0.12), transparent 70%);
     background-repeat: no-repeat;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   h1, h2, h3 {
@@ -80,6 +98,7 @@ export const Navegacao = styled.nav`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 8px 22px;
   padding: 16px 0;
   font-size: 0.95rem;
@@ -106,7 +125,7 @@ export const Navegacao = styled.nav`
 
     &:hover {
       color: var(--ciano);
-      text-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+      text-shadow: 0 0 10px rgba(var(--ciano-rgb), 0.6);
     }
 
     &:hover::after {
@@ -197,15 +216,15 @@ export const Chip = styled.span`
   font-size: 0.8rem;
   padding: 3px 10px;
   border-radius: 99px;
-  background: rgba(0, 229, 255, 0.06);
-  border: 1px solid rgba(0, 229, 255, 0.25);
+  background: rgba(var(--ciano-rgb), 0.06);
+  border: 1px solid rgba(var(--ciano-rgb), 0.25);
   color: var(--texto-suave);
   transition: color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 
   &:hover {
     color: var(--ciano);
     border-color: var(--ciano);
-    box-shadow: 0 0 10px rgba(0, 229, 255, 0.35);
+    box-shadow: 0 0 10px rgba(var(--ciano-rgb), 0.35);
   }
 `
 
@@ -235,7 +254,7 @@ export const Botao = styled.a<BotaoProps>`
     transform: translateY(-2px);
     box-shadow: ${({ $principal }) =>
       $principal
-        ? '0 0 22px rgba(0, 229, 255, 0.55), 0 0 30px rgba(176, 38, 255, 0.4)'
+        ? '0 0 22px rgba(var(--ciano-rgb), 0.55), 0 0 30px rgba(var(--roxo-rgb), 0.4)'
         : 'var(--brilho-ciano)'};
     border-color: ${({ $principal }) => ($principal ? 'transparent' : 'var(--ciano)')};
     color: ${({ $principal }) => ($principal ? 'var(--texto-destaque)' : 'var(--ciano)')};
